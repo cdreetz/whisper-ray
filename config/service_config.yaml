@@ -1,0 +1,18 @@
+serve:
+  max_concurrent_queries: 2
+  max_queued_requests: 100
+  num_replicas: 8
+  graceful_shutdown_wait_loop_s: 2
+  http_host: "0.0.0.0"
+  http_port: 8000
+
+model:
+  name: "openai/whisper-large-v3-turbo"
+  device: "cuda"
+  batch_size: 1
+  max_audio_length: 3600
+  sample_rate: 16000
+  fp16: true
+
+monitoring:
+  custom_metrics_interval: 10
